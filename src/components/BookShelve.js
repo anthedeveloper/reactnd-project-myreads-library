@@ -15,7 +15,7 @@ class BookShelve extends React.Component {
 
         const book = bookList.map((book) =>
             <Book key={book.id} book={book} bookList={bookList}
-                  authors={book.author} changeShelf={changeShelf}/>
+                  authors={book.authors} changeShelf={changeShelf}/>
         )
 
         return (

@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from "prop-types";
 
 const Author = props => {
-    const author = this.props.author
+    const author = props.author
 
     return (
         <li>{author}</li>
     );
 }
 Author.propTypes = {
-    author : PropTypes.object
+    author : PropTypes.string
 }
 export default Author;

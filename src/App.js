@@ -24,20 +24,21 @@ class App extends React.Component {
 
     changeShelve = (book, newShelf) => {
         BooksAPI.update(book, newShelf)
-                .then(res => {
-                    book.shelf = newShelf;
-                    this.setState(
-                        oldState => ({
-                            allBooks : oldState.allBooks
-                                .filter(oldBook => oldBook.id !== book.id)
-                                .concat(book)
-                        })
-                    );
-                });
+            .then(res => {
+                book.shelf = newShelf;
+                this.setState(
+                    oldState => ({
+                        allBooks : oldState.allBooks
+                            .filter(oldBook => oldBook.id !== book.id)
+                            .concat(book)
+                    })
+                );
+            });
     };
 
     render() {
         const { loading, allBooks } = this.state;
+        const  notFoundPage = "<div><h1>404</h1> <p>Page not found</p></div>";
 
         if(loading) {
             return (
@@ -49,12 +50,13 @@ class App extends React.Component {
 
         return (
             <div className="app">
-                <Routes>
-                    <Route exact path='/'
-                           element={ <Library books={allBooks} changeShelf={this.changeShelve} />} />
-                    <Route path='/search'
-                           element={ <SearchDesk books={allBooks} changeShelf={this.changeShelve}/>} />
-                </Routes>
+                    <Routes>
+                        <Route exact path='/'
+                               element={ <Library books={allBooks} changeShelf={this.changeShelve} />} />
+                        <Route path='/search'
+                               element={ <SearchDesk books={allBooks} changeShelf={this.changeShelve}/>} />
+                        <Route component={notFoundPage}/>
+                    </Routes>
             </div>
         );
     }

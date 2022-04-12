@@ -22,8 +22,9 @@ class Library extends React.Component {
                     return 'Want to read';
                 case READ:
                     return 'Read';
+                default:
+                    return "All";
             }
-            return 'All';
         };
 
         return(

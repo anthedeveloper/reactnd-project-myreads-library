@@ -30,8 +30,6 @@ class SearchDesk extends Component {
 
     emitChange (query) {
         this.setState({searchInput :query});
-        console.log(query);
-        console.log(this.state.searchInput);
 
         if(query && query.length > 0){
             BooksAPI.search(query.trim())
@@ -49,7 +47,13 @@ class SearchDesk extends Component {
 
     render (){
         const {searchInput, searchResultList} = this.state;
-
+        searchResultList.map(resultBook => {
+            const tempBook = this.props.books.find(allBook => resultBook.id === allBook.id);
+            if(tempBook){
+                resultBook.shelf = tempBook.shelf;
+            }
+            return resultBook;
+        })
         return (
             <div className="search-books">
                 <div className="search-books-bar">
