@@ -1,3 +1,19 @@
+## Hello from Ayse Nur,
+I downloaded the starter project from github, and developed on my PC. 
+Once, it is completed, I pasted my project here.
+
+I hope everything works as it was working on my PC :)
+
+Regards,
+
+Below, you can find the command to run the project successfully.
+
+>> npm install react-router-dom
+>> npm i --save lodash.debounce
+>> npm install
+>> npm start
+
+
 # MyReads Project
 
 This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
