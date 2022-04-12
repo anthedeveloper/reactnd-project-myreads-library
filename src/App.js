@@ -4,6 +4,7 @@ import './App.css'
 import SearchDesk from "./components/SearchDesk";
 import Library from "./components/Library";
 import {Route, Routes} from 'react-router-dom'
+import NotFound from "./components/NotFound";
 
 
 class App extends React.Component {
@@ -38,7 +39,6 @@ class App extends React.Component {
 
     render() {
         const { loading, allBooks } = this.state;
-        const  notFoundPage = "<div><h1>404</h1> <p>Page not found</p></div>";
 
         if(loading) {
             return (
@@ -55,7 +55,7 @@ class App extends React.Component {
                                element={ <Library books={allBooks} changeShelf={this.changeShelve} />} />
                         <Route path='/search'
                                element={ <SearchDesk books={allBooks} changeShelf={this.changeShelve}/>} />
-                        <Route component={notFoundPage}/>
+                        <Route path="*"  element={ <NotFound/> }/>
                     </Routes>
             </div>
         );
