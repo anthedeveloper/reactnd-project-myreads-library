@@ -6,13 +6,25 @@ I hope everything works as it was working on my PC :)
 
 Regards,
 
+## About the project
+The MyReads Library project connects to the BooksAPI to show the 3 reading status of the book.
+- Currently Reading
+- Want To Read
+- Read
+
+There is a main page to show the books in the stated statuses. 
+User can change the status of the book using the green button below each book.
+Also, there is a search page, user can search books and add them to the main page via changing status.
+User can navigate between main page and search page.
+
+## How to set up the project
 Below, you can find the command to run the project successfully.
-
->> npm install react-router-dom
->> npm i --save lodash.debounce
->> npm install
->> npm start
-
+```
+ npm install react-router-dom
+ npm i --save lodash.debounce
+ npm install
+ npm start
+```
 
 # MyReads Project
 
